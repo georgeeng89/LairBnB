@@ -1,0 +1,21 @@
+.sign-up-form {
+  background-color: rgb(101, 224, 255);
+  padding: 30px;
+  margin: 10px 10px;
+  margin-top: 200px;
+  width: 500px;
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.sign-up-form:hover {
+  box-shadow: 5px 5px 2em rgb(0, 0, 0);
+}
+
+label {
+  padding: 10px;
+}
