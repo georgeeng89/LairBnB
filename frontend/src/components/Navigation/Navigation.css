@@ -1,5 +1,5 @@
 .nav-bar {
-  background-color: rgb(174, 209, 255);
+  background-color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -76,4 +76,13 @@
   height: 25px;
   width: 25px;
   display: inline;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+}
+
+.logo-container {
+  height: 40px;
 }

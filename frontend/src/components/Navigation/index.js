@@ -62,8 +62,8 @@ function Navigation({ isLoaded }){
 
   return (
     <ul className='nav-bar'>
-      <li className='upper__left home'>
-        <NavLink exact to="/">Home</NavLink>
+      <li className='logo-container'>
+        <NavLink exact to="/"><img className='logo' src='../../../images/lairbnb_logo.png'/></NavLink>
       </li>
       <li className='upper__right'>
         {isLoaded && sessionLinks}
