@@ -1,10 +1,79 @@
 .nav-bar {
   background-color: rgb(174, 209, 255);
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
+  border-radius: 5px;
+}
 
+
+
+.home a {
+  margin: 5px;
+  text-decoration: none;
+  color: green;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid green 1px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+}
+
+.home a:hover {
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px .2em rgb(0, 0, 0);
+}
+
+
+.upper__right {
+  display: inline;
+  position: absolute;
+  right: 5%;
+  margin-top: 3px;
+}
+
+.sign-in {
+  margin: 5px;
+  text-decoration: none;
+  color: green;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid green 1px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+}
+
+.sign-in:hover{
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px .2em rgb(0, 0, 0);
+}
+
+.get-started {
+  margin: 5px;
+  text-decoration: none;
+  color: green;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid green 1px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+}
+
+.get-started:hover{
+  background-color: white;
+  box-shadow: 3px 3px .2em rgb(0, 0, 0);
+}
+
+.upper__left {
+  height: 25px;
+  width: 25px;
+  display: inline;
 }
