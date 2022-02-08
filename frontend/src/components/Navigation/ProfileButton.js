@@ -32,17 +32,20 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        Open Menu
+        <img className='menu' src='../../../images/menu-bars.png' />
       </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
+      <div className="menu-options">
+        {showMenu && (
+          <ul className="profile-dropdown">
+            <li> <div className="menu-items">Username: </div>{user.username}</li>
+            <li> <div className="menu-items">Email: </div>{user.email}</li>
+            <li>
+              <button onClick={logout}>Log Out</button>
+            </li>
+          </ul>
+        )}
+      </div>
+
     </>
   );
 }

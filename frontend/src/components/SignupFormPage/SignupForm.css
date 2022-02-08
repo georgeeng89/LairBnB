@@ -36,3 +36,10 @@
 label {
   padding: 10px;
 }
+
+.sign-up-button {
+  margin-top: 10px;
+  width: 100px;
+  height: 35  px;
+  font-size: 16px ;
+}

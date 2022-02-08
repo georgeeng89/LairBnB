@@ -14,11 +14,11 @@
 .home a {
   margin: 5px;
   text-decoration: none;
-  color: green;
+  color: rgb(60, 151, 255);
   display: inline;
   font-family: helvetica;
   padding: 4px 7px;
-  border: solid green 1px;
+  border: solid rgb(60, 151, 255) 1px;
   border-radius: 3px;
   background-color: rgb(233, 233, 233);
 }
@@ -40,11 +40,11 @@
 .sign-in {
   margin: 5px;
   text-decoration: none;
-  color: green;
+  color: rgb(60, 151, 255);
   display: inline;
   font-family: helvetica;
   padding: 4px 7px;
-  border: solid green 1px;
+  border: solid rgb(60, 151, 255) 1px;
   border-radius: 3px;
   background-color: rgb(233, 233, 233);
 }
@@ -58,11 +58,11 @@
 .get-started {
   margin: 5px;
   text-decoration: none;
-  color: green;
+  color: rgb(60, 151, 255);
   display: inline;
   font-family: helvetica;
   padding: 4px 7px;
-  border: solid green 1px;
+  border: solid rgb(60, 151, 255) 1px;
   border-radius: 3px;
   background-color: rgb(233, 233, 233);
 }
@@ -80,9 +80,38 @@
 
 .logo {
   height: 100%;
-  width: 100%;
 }
 
 .logo-container {
   height: 40px;
+}
+
+.menu{
+  height: 20px;
+}
+
+
+.menu-options {
+  border-radius: 10px;
+  background-color: rgb(214, 214, 214);
+  width: 200px;
+  margin: 10px;
+  position: absolute;
+  right: 1px;
+  /* top: 100%; */
+  /* z-index: 1; */
+}
+
+.menu-options button {
+  width: 100px;
+  height: 30px;
+}
+
+.menu-options li {
+  padding: 10px;
+  list-style: none;
+}
+
+.menu-items {
+  font-weight: bold;
 }
