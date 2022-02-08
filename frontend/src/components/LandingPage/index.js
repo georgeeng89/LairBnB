@@ -1,9 +1,9 @@
-
+import './LandingPage.css'
 
 function LandingPage() {
   return (
     <div>
-      <img src='../../../images/homepage.jpg' />
+      <img className='background-image' src='../../../images/homepage.jpg' />
     </div>
   )
 }

@@ -44,36 +44,38 @@
 .sign-in {
   margin: 5px;
   text-decoration: none;
-  color: rgb(60, 151, 255);
+  color: white;
   display: inline;
   font-family: helvetica;
   padding: 4px 7px;
   border: solid rgb(60, 151, 255) 1px;
   border-radius: 3px;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(60, 151, 255);
 }
 
 .sign-in:hover{
   background-color: white;
+  color: rgb(60, 151, 255);
   cursor: pointer;
-  box-shadow: 3px 3px .2em rgb(0, 0, 0);
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
 }
 
 .get-started {
   margin: 5px;
   text-decoration: none;
-  color: rgb(60, 151, 255);
+  color: white;
   display: inline;
   font-family: helvetica;
   padding: 4px 7px;
   border: solid rgb(60, 151, 255) 1px;
   border-radius: 3px;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(60, 151, 255);
 }
 
 .get-started:hover{
   background-color: white;
-  box-shadow: 3px 3px .2em rgb(0, 0, 0);
+  color: rgb(60, 151, 255);
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
   cursor: pointer;
 }
 
@@ -145,7 +147,7 @@
 
 
 .menu-container p {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 /* .profile-dropdown {
