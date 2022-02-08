@@ -70,6 +70,7 @@
 .get-started:hover{
   background-color: white;
   box-shadow: 3px 3px .2em rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 .upper__left {
@@ -88,8 +89,17 @@
 
 .menu{
   height: 20px;
+  margin-top: 14px;
+  border: 1px solid black;
+  border-radius: 2px;
 }
 
+
+.menu:hover {
+  background-color: rgb(238, 238, 238);
+  box-shadow: 1px 1px 0.2em rgb(58, 58, 58);
+  cursor: pointer;
+}
 
 .menu-options {
   border-radius: 10px;
@@ -98,6 +108,7 @@
   margin: 10px;
   position: absolute;
   right: 1px;
+  top: 50px;
   /* top: 100%; */
   /* z-index: 1; */
 }
@@ -115,3 +126,24 @@
 .menu-items {
   font-weight: bold;
 }
+
+.demo-form {
+  text-decoration: none;
+  display: inline;
+  font-family: helvetica;
+  border-radius: 3px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.menu-container p {
+  margin-right: 10px;
+}
+
+/* .profile-dropdown {
+  position: absolute;
+} */

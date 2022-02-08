@@ -36,15 +36,34 @@
 
 
 // frontend/src/components/Navigation/index.js
-import React from 'react';
+import React, { useState } from "react";
+import * as sessionActions from "../../store/session";
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
+
+  const dispatch = useDispatch();
+  const [credential, setCredential] = useState("demo@user.io");
+  const [password, setPassword] = useState("password");
+  const [errors, setErrors] = useState([]);
+
+  const demoLogin = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({ credential, password })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+  };
+
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -55,8 +74,11 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
 
-        
-        <button className='get-started'>Demo</button>
+        <form className='demo-form' onSubmit={demoLogin}>
+          <input type='hidden' value={credential} />
+          <input type='hidden' value={password} />
+          <button className='get-started'>Demo</button>
+        </form>
 
 
         <LoginFormModal />
@@ -68,7 +90,7 @@ function Navigation({ isLoaded }){
   return (
     <ul className='nav-bar'>
       <li className='logo-container'>
-        <NavLink exact to="/"><img className='logo' src='../../../images/lairbnb_logo.png'/></NavLink>
+        <NavLink exact to="/"><img className='logo' src='../../../images/lairbnb_logo.png' /></NavLink>
       </li>
       <li className='upper__right'>
         {isLoaded && sessionLinks}

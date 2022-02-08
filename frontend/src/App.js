@@ -20,7 +20,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <p> hey {isLoaded.toString()}</p>
+            <p> Welcome to LairBnB</p>
           </Route>
           <Route path="/signup">
             <SignupFormPage />
