@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,10 +18,12 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+
       {isLoaded && (
         <Switch>
           <Route exact path="/">
             <p> Welcome to LairBnB</p>
+            <LandingPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
