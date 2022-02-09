@@ -7,6 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 
+import SpotBrowser from "./components/SpotBrowser/SpotBrowser";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,8 +24,10 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <p> Welcome to LairBnB</p>
             <LandingPage />
+          </Route>
+          <Route path="/lairs">
+            <SpotBrowser />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

@@ -18,15 +18,17 @@ module.exports = {
       },
       review: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(9000)
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       }
     });
   },

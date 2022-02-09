@@ -1,4 +1,82 @@
 .background-image {
   width: 100%;
-  
+
+}
+
+.explore-container {
+  border: 3px solid red;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* .explore-item {
+  background-image: url("../../../public/images/stay.jpg");
+  margin: 30px;
+  text-decoration: none;
+  font-size: 36px;
+  font-family: Helvetica;
+  width: 350px;
+  height: 350px;
+  border: 2px solid orange;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 30px;
+} */
+
+.explore-button {
+  height: 35px;
+  width: 280px;
+  background-color: rgb(255, 108, 132);
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  margin-right: 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 108, 132);
+}
+
+.explore-button:hover {
+  background-color: white;
+  color: rgb(255, 108, 132);
+  box-shadow: 1px 1px 0.2em rgb(98, 205, 255);
+}
+
+
+.explore-item1 {
+  background-image: url("../../../public/images/explore1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 30px;
+  text-decoration: none;
+  font-size: 36px;
+  font-family: Helvetica;
+  width: 350px;
+  height: 350px;
+  border: 2px solid orange;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.explore-item2 {
+  background-image: url("../../../public/images/explore2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 30px;
+  text-decoration: none;
+  font-size: 36px;
+  font-family: Helvetica;
+  width: 350px;
+  height: 350px;
+  border: 2px solid orange;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 30px;
+  border-radius: 30px;
 }

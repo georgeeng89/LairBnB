@@ -6,12 +6,13 @@ const { User } = require('../../db/models');
 
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-
+const spotRouter = require('./spot')
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
+router.use('/spot', spotRouter)
 // Route for testing purposes
 // router.post('/test', function(req, res) {
 //   res.json({ requestBody: req.body });
@@ -20,10 +21,10 @@ router.use('/users', usersRouter);
 // GET /api/set-token-cookie
 router.get('/set-token-cookie', asyncHandler(async (_req, res) => {
   const user = await User.findOne({
-      where: {
-        username: 'Demo-lition'
-      }
-    });
+    where: {
+      username: 'Demo-lition'
+    }
+  });
   setTokenCookie(res, user);
   return res.json({ user });
 }));

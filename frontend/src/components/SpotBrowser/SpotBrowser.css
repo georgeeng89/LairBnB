@@ -1,0 +1,49 @@
+.spots-container {
+  margin-top: 50px;
+}
+
+nav {
+  /* border: 1px solid black; */
+  width: 1000px;
+}
+
+main {
+  display: flex;
+  /* border: 5px solid orange; */
+  justify-content: center;
+}
+
+.spots-container-outer {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.spots-container {
+  padding: 30px;
+  border: 1px dotted red;
+  display: flex;
+}
+
+.lairs-welcome {
+  margin-top: 47px;
+  height: 300px;
+  width: 1000px;
+  background-image: url("../../../public/images/stay.jpg");
+  display: flex;
+  justify-content: center;
+}
+
+.lairs-welcome h2 {
+  bottom: 1px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  /* border: 5px solid red; */
+  color: white;
+}
+
+.spots-info {
+  text-decoration: none;
+}
