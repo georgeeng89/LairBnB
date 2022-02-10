@@ -7,7 +7,9 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 
+
 import SpotBrowser from "./components/SpotBrowser/SpotBrowser";
+import SpotForm from "./components/SpotForm/SpotForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +30,9 @@ function App() {
           </Route>
           <Route path="/lairs">
             <SpotBrowser />
+          </Route>
+          <Route path="/new">
+            <SpotForm />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

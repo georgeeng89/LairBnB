@@ -1,14 +1,19 @@
-// import { LOAD_ITEMS, REMOVE_ITEM, ADD_ITEM } from './items';
 import { csrfFetch } from './csrf';
 
-const LOAD = 'spot/LOAD';
-// const LOAD_TYPES = 'spot/LOAD_TYPES';
-// const ADD_ONE = 'spot/ADD_ONE';
+
+//actions
+const LOAD_SPOTS = 'spot/LOAD_SPOTS';
+const ADD_SPOT = 'spot/ADD_SPOT'
 
 
+//action creators
+export const addSpot = (newSpot) => ({
+  type: ADD_SPOT, //action
+  newSpot
+});
 
 const load = (list) => ({
-  type: LOAD,
+  type: LOAD_SPOTS,
   list
 });
 
@@ -22,32 +27,53 @@ export const getSpot = () => async (dispatch) => {
   }
 };
 
+export const createSpot = (payload) => async (dispatch, getState) => {
+  const response = await csrfFetch('/api/spot', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  console.log(response)
+
+  if (response.ok) {
+    const newSpot = await response.json()
+
+    console.log('NEW SPOT ????? ----> ', newSpot)
+
+    dispatch(addSpot(newSpot))
+    return newSpot;
+  }
+}
+
+
 
 
 const initialState = {
   list: {}
 };
 
-
 const spotReducer = (state = initialState, action) => {
 
   let newState;
   switch (action.type) {
 
-    case LOAD: {
+    case LOAD_SPOTS: {
       newState = { ...state }
-
       const spotList = {}
-
       action.list.forEach(spot => {
         spotList[spot.id] = spot;
       })
-  
       newState.list = spotList;
       return newState;
     }
-    default: return state;
 
+    case ADD_SPOT: {
+      newState = { ...state }
+      newState.list = { ...newState.list, [action.newSpot.id]: action.newSpot }
+      return newState;
+    }
+
+    default: return state;
   }
 }
 
