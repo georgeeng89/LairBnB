@@ -15,6 +15,7 @@ const SpotForm = () => {
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
   const [price, setPrice] = useState("");
+  const [errors, setErrors] = useState([]);
 
 
   const reset = () => {
@@ -30,8 +31,13 @@ const SpotForm = () => {
     e.preventDefault();
     const newSpot = { name, address, city, state, country, price, userId };
 
+    setErrors([]);
+
     // 8. Dispatch the return value of the thunk creator instead (the thunk)
-    dispatch(createSpot(newSpot));
+    dispatch(createSpot(newSpot)).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
     reset();
   };
 
@@ -42,6 +48,11 @@ const SpotForm = () => {
     <div className="input-box">
       <h1>Post a Spot</h1>
       <form onSubmit={handleSubmit}>
+
+      <ul className="errors-list">
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+
       <input type="hidden" name="userId" value={userId} />
         <input
           type="text"
@@ -49,6 +60,7 @@ const SpotForm = () => {
           value={name}
           placeholder="Name"
           name="name"
+          required
         />
 
         <input
@@ -57,6 +69,7 @@ const SpotForm = () => {
           value={address}
           placeholder="Address"
           name="address"
+          required
         />
 
         <input
@@ -65,6 +78,7 @@ const SpotForm = () => {
           value={city}
           placeholder="City"
           name="city"
+          required
         />
 
         <input
@@ -73,6 +87,7 @@ const SpotForm = () => {
           value={state}
           placeholder="State"
           name="state"
+          required
         />
 
         <input
@@ -81,6 +96,7 @@ const SpotForm = () => {
           value={country}
           placeholder="Country"
           name="country"
+          required
         />
 
         <input
@@ -89,6 +105,7 @@ const SpotForm = () => {
           value={price}
           placeholder="Price"
           name="price"
+          required
         />
 
 

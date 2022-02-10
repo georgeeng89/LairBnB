@@ -14,13 +14,16 @@ main {
 }
 
 .spots-container-outer {
-  /* border: 1px solid black; */
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  border: 2px solid blue;
+  padding: 10px;
 }
 
 
 .spots-container {
+  width: 150px;
   padding: 30px;
   border: 1px dotted red;
   display: flex;

@@ -10,6 +10,7 @@ import { getSpot } from '../../store/spot';
 import './SpotBrowser.css'
 
 const SpotBrowser = () => {
+  
   const dispatch = useDispatch();
   const { spotId } = useParams();
 
@@ -46,19 +47,13 @@ const SpotBrowser = () => {
               return (
                 <div className='spots-container'>
 
-                  <NavLink key={spot.name} to={`/spot/${spot.id}`}>
-
-                    {/* <div
-                  className="nav-entry-image"
-                  style={{ backgroundImage: `url('${pokemon.imageUrl}')` }}
-                ></div> */}
+                  <NavLink key={spot.name} to={`/lair/${spot.id}`}>
 
                     <div className='spots-inner-container'>
                       <div className="spots-info">{'Name: '}{spot.name}</div>
                       <div className="spots-info">{spot.address && `Address: ${spot.address}`}</div>
                       <div className="spots-info">{spot.price && `Price: ${spot.price}`}</div>
                     </div>
-
 
                   </NavLink>
                 </div>
@@ -70,7 +65,7 @@ const SpotBrowser = () => {
       </div>
 
       {/* {showForm ? (
-        <CreatePokemonForm hideForm={() => setShowForm(false)} />
+        <CreateForm hideForm={() => setShowForm(false)} />
       ) : (
 
         <p>

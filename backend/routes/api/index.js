@@ -6,13 +6,15 @@ const { User } = require('../../db/models');
 
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const spotRouter = require('./spot')
+const spotRouter = require('./spot.js');
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.use('/spot', spotRouter)
+router.use('/spot', spotRouter);
+
+
 // Route for testing purposes
 // router.post('/test', function(req, res) {
 //   res.json({ requestBody: req.body });
