@@ -13,7 +13,7 @@ const SpotBrowser = () => {
   const dispatch = useDispatch();
   const { spotId } = useParams();
 
-  const spot = useSelector((state) => state.spot.entries);
+  const spot = useSelector((state) => state.spot.list);
   const spotValue = Object.values(spot)
 
   const [showForm, setShowForm] = useState(false);

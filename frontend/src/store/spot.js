@@ -19,7 +19,7 @@ const load = (list) => ({
 
 
 export const getSpot = () => async (dispatch) => {
-  const response = await csrfFetch(`/api/spot`);
+  const response = await fetch(`/api/spot`);
 
   if (response.ok) {
     const list = await response.json();
@@ -49,7 +49,7 @@ export const createSpot = (payload) => async (dispatch, getState) => {
 
 
 const initialState = {
-  entries: {}
+  list: {}
 };
 
 const spotReducer = (state = initialState, action) => {
@@ -63,13 +63,13 @@ const spotReducer = (state = initialState, action) => {
       action.list.forEach(spot => {
         spotList[spot.id] = spot;
       })
-      newState.entries = spotList;
+      newState.list = spotList;
       return newState;
     }
 
     case ADD_SPOT: {
       newState = { ...state }
-      newState.entries = { ...newState.entries, [action.newSpot.id]: action.newSpot }
+      newState.list = { ...newState.list, [action.newSpot.id]: action.newSpot }
       return newState;
     }
 
