@@ -49,7 +49,7 @@ export const createSpot = (payload) => async (dispatch, getState) => {
 
 
 const initialState = {
-  list: {}
+  entries: {}
 };
 
 const spotReducer = (state = initialState, action) => {
@@ -63,13 +63,13 @@ const spotReducer = (state = initialState, action) => {
       action.list.forEach(spot => {
         spotList[spot.id] = spot;
       })
-      newState.list = spotList;
+      newState.entries = spotList;
       return newState;
     }
 
     case ADD_SPOT: {
       newState = { ...state }
-      newState.list = { ...newState.list, [action.newSpot.id]: action.newSpot }
+      newState.entries = { ...newState.entries, [action.newSpot.id]: action.newSpot }
       return newState;
     }
 

@@ -2,7 +2,6 @@
 
 .background-image {
   width: 100%;
-
 }
 
 .explore-container {
@@ -10,7 +9,7 @@
   padding: 30px;
   display: flex;
   justify-content: space-around;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 
