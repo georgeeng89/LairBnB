@@ -19,7 +19,7 @@ const load = (list) => ({
 
 
 export const getSpot = () => async (dispatch) => {
-  const response = await fetch(`/api/spot`);
+  const response = await csrfFetch(`/api/spot`);
 
   if (response.ok) {
     const list = await response.json();
@@ -38,7 +38,7 @@ export const createSpot = (payload) => async (dispatch, getState) => {
   if (response.ok) {
     const newSpot = await response.json()
 
-    console.log('NEW SPOT ????? ----> ', newSpot)
+    // console.log('NEW SPOT ????? ----> ', newSpot)
 
     dispatch(addSpot(newSpot))
     return newSpot;
