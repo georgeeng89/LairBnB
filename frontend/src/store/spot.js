@@ -19,7 +19,7 @@ const load = (list) => ({
 
 
 export const getSpot = () => async (dispatch) => {
-  const response = await fetch(`/api/spot`);
+  const response = await csrfFetch(`/api/spot`);
 
   if (response.ok) {
     const list = await response.json();

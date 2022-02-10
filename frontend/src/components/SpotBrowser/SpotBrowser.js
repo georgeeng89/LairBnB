@@ -16,10 +16,6 @@ const SpotBrowser = () => {
   const spot = useSelector((state) => state.spot.entries);
   const spotValue = Object.values(spot)
 
-  console.log('spot ------> ', spot)
-
-  console.log('getSpot -------->', getSpot)
-
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
