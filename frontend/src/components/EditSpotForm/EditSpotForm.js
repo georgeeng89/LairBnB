@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // 8. Replace import of action creator with thunk creator
-// import { addArticle } from "../../store/articleReducer";
 
-import { createSpot } from "../../store/spot";
+// import { createSpot } from "../../store/spot";
+import { editSpot } from "../../store/spot";
 
-import "./SpotForm.css";
+import "./EditSpotForm.css";
 
-const SpotForm = () => {
+const SpotForm = ({user, spot}) => {
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id
@@ -38,13 +38,13 @@ const SpotForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newSpot = {
-      name, address, city, state, country, price, userId
+      id: spot.id, name, address, city, state, country, price, userId
     };
 
     setErrors([]);
 
     // 8. Dispatch the return value of the thunk creator instead (the thunk)
-    dispatch(createSpot(newSpot)).catch(async (res) => {
+    dispatch(editSpot(newSpot)).catch(async (res) => {
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
     });
@@ -57,8 +57,8 @@ const SpotForm = () => {
   };
 
   return (
-    <div className="input-box">
-      <h1>List a Lair</h1>
+    <div className="edit-spot-container">
+      <h1>Edit Lair</h1>
       <form onSubmit={handleSubmit}>
 
         <ul className="errors-list">

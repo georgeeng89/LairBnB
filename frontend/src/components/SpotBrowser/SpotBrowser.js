@@ -2,15 +2,12 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 
-// import PokemonDetail from './PokemonDetail';
-// import CreatePokemonForm from './CreatePokemonForm';
-
 import Fab from './Fab';
 import { getSpot } from '../../store/spot';
 import './SpotBrowser.css'
 
 const SpotBrowser = () => {
-  
+
   const dispatch = useDispatch();
   const { spotId } = useParams();
 
@@ -35,7 +32,7 @@ const SpotBrowser = () => {
 
         <nav className='lairs-nav'>
 
-          <Fab hidden={showForm} onClick={() => setShowForm(true)} />
+          {/* <Fab hidden={showForm} onClick={() => setShowForm(true)} /> */}
           <div className='lairs-welcome'>
             <h2>
               Stay at a Lair
@@ -47,10 +44,10 @@ const SpotBrowser = () => {
               return (
                 <div className='spots-container'>
 
-                  <NavLink key={spot.name} to={`/lair/${spot.id}`}>
+                  <NavLink className='nav-link' key={spot.name} to={`/lair/${spot.id}`}>
 
                     <div className='spots-inner-container'>
-                      <div className="spots-info">{'Name: '}{spot.name}</div>
+                      <div className="spots-info"> {'Name: '}{spot.name}</div>
                       <div className="spots-info">{spot.address && `Address: ${spot.address}`}</div>
                       <div className="spots-info">{spot.price && `Price: ${spot.price}`}</div>
                     </div>

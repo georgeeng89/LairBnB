@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.DECIMAL
   }, {});
-  Spot.associate = function(models) {
-    Spot.belongsTo(models.User, {foreignKey: 'userId'})
-    Spot.hasMany(models.Booking, {foreignKey: 'spotId'})
-    Spot.hasMany(models.Image, {foreignKey: 'spotId'})
+  Spot.associate = function (models) {
+    Spot.belongsTo(models.User, { foreignKey: 'userId' })
+    Spot.hasMany(models.Booking, { foreignKey: 'spotId' })
+    Spot.hasMany(models.Image, { foreignKey: 'spotId' })
   };
 
 

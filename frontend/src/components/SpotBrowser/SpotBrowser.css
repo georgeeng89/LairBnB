@@ -49,4 +49,12 @@ main {
 
 .spots-info {
   text-decoration: none;
+  font-size: 14px;
+  margin: 1px;
+  color: black;
+  font-family: Helvetica
+}
+
+.nav-link {
+  text-decoration: none;
 }

@@ -2,28 +2,36 @@ import { csrfFetch } from './csrf';
 
 
 //actions
+
 const LOAD_SPOTS = 'spot/LOAD_SPOTS';
 const ADD_SPOT = 'spot/ADD_SPOT'
+const LOAD_SPOT = 'spot/LOAD_SPOT'
 
 
 //action creators
+
 export const addSpot = (newSpot) => ({
   type: ADD_SPOT, //action
   newSpot
 });
 
-const load = (list) => ({
+export const loadSpots = (list) => ({
   type: LOAD_SPOTS,
   list
 });
 
+export const loadSingleSpot = (spot) => ({
+  type: LOAD_SPOT,
+  spot
+})
+
+//Thunks
 
 export const getSpot = () => async (dispatch) => {
   const response = await csrfFetch(`/api/spot`);
-
   if (response.ok) {
     const list = await response.json();
-    dispatch(load(list));
+    dispatch(loadSpots(list));
   }
 };
 
@@ -34,22 +42,45 @@ export const createSpot = (payload) => async (dispatch, getState) => {
     body: JSON.stringify(payload)
   })
   console.log(response)
-
   if (response.ok) {
     const newSpot = await response.json()
-
-    // console.log('NEW SPOT ????? ----> ', newSpot)
-
     dispatch(addSpot(newSpot))
     return newSpot;
   }
 }
 
+//For Editing a Spot
+export const editSpot = (spot) => async (dispatch) => {
+  const response = await csrfFetch(`/api/spot/${spot.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(spot)
+  });
+
+  if (response.ok) {
+    const updatedSpot = await response.json();
+    dispatch(loadSingleSpot(updatedSpot))
+  }
+  return response;
+}
+
+export const getSpotId = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/spot/${id}`)
+
+  if (response.ok) {
+      const spot = await response.json()
+      if (spot === null) return null
+      dispatch(loadSingleSpot(spot))
+      return spot
+  }
+}
 
 
+//Spot Reducer
 
 const initialState = {
-  list: {}
+  list: {},
+  isLoading: true
 };
 
 const spotReducer = (state = initialState, action) => {
@@ -71,6 +102,11 @@ const spotReducer = (state = initialState, action) => {
       newState = { ...state }
       newState.list = { ...newState.list, [action.newSpot.id]: action.newSpot }
       return newState;
+    }
+    case LOAD_SPOT: {
+      newState = { ...state }
+      newState.list = { ...state.list,[action.spot.id]: action.spot }
+      return newState
     }
 
     default: return state;

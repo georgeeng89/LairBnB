@@ -6,7 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
-
+import SpotDetail from "./components/SpotDetails/SpotDetails";
 
 import SpotBrowser from "./components/SpotBrowser/SpotBrowser";
 import SpotForm from "./components/SpotForm/SpotForm";
@@ -30,6 +30,9 @@ function App() {
           </Route>
           <Route path="/lairs">
             <SpotBrowser />
+          </Route>
+          <Route path={`/lair/:id`}>
+            <SpotDetail />
           </Route>
           <Route path="/new">
             <SpotForm />
