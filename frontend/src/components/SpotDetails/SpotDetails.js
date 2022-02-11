@@ -33,7 +33,7 @@ const SpotDetail = () => {
             {console.log('currSpot ------> ', currSpot)}
             {console.log('my spots -------> ', spots)}
             {console.log('spotuser -------> ', currSpot.User)}
-            {console.log('userid?? -------> ', user.id)}
+            {console.log('userid?? -------> ', user?.id)}
             {console.log('SPOT ID', currSpot.id)}
 
             <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div>
@@ -45,7 +45,7 @@ const SpotDetail = () => {
             <div className='spot-detail-price'>price of spot: {currSpot.price}</div>
 
 
-            {user.id === currSpot.userId && (
+            {user?.id === currSpot.userId && (
               <>
                 <EditSpot user={user} spot={currSpot}/>
 
