@@ -10,6 +10,10 @@
   box-shadow: 0 0 10px 0.1em rgb(149, 225, 255);
 }
 
+.login-form-modal {
+  background-color: black;
+}
+
 .log-in input {
   width: 230px;
   height: 25px;

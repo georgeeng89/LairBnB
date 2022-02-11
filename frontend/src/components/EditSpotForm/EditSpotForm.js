@@ -9,7 +9,9 @@ import { editSpot } from "../../store/spot";
 
 import "./EditSpotForm.css";
 
-const SpotForm = ({user, spot}) => {
+const SpotForm = ({ user, spot }) => {
+
+  console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id
@@ -17,12 +19,12 @@ const SpotForm = ({user, spot}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  const [price, setPrice] = useState("");
+  const [name, setName] = useState(spot.name);
+  const [address, setAddress] = useState(spot.address);
+  const [city, setCity] = useState(spot.city);
+  const [state, setState] = useState(spot.state);
+  const [country, setCountry] = useState(spot.country);
+  const [price, setPrice] = useState(spot.price);
   const [errors, setErrors] = useState([]);
 
 
@@ -67,6 +69,8 @@ const SpotForm = ({user, spot}) => {
 
         <input type="hidden" name="userId" value={userId} />
 
+
+        Name
         <input
           type="text"
           onChange={(e) => setName(e.target.value)}
@@ -75,7 +79,7 @@ const SpotForm = ({user, spot}) => {
           name="name"
           required
         />
-
+        Address
         <input
           type="text"
           onChange={(e) => setAddress(e.target.value)}
@@ -84,7 +88,7 @@ const SpotForm = ({user, spot}) => {
           name="address"
           required
         />
-
+        City
         <input
           type="text"
           onChange={(e) => setCity(e.target.value)}
@@ -93,7 +97,7 @@ const SpotForm = ({user, spot}) => {
           name="city"
           required
         />
-
+        State
         <input
           type="text"
           onChange={(e) => setState(e.target.value)}
@@ -102,7 +106,7 @@ const SpotForm = ({user, spot}) => {
           name="state"
           required
         />
-
+        Country
         <input
           type="text"
           onChange={(e) => setCountry(e.target.value)}
@@ -111,7 +115,7 @@ const SpotForm = ({user, spot}) => {
           name="country"
           required
         />
-
+        Price
         <input
           type="text"
           onChange={(e) => setPrice(e.target.value)}
@@ -121,14 +125,6 @@ const SpotForm = ({user, spot}) => {
           required
         />
 
-
-        {/* <textarea
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-          name="body"
-          placeholder="Add your entry"
-          rows="10"
-        ></textarea> */}
 
         <button type="submit">Submit</button>
       </form>
