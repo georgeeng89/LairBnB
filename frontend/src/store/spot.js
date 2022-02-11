@@ -100,9 +100,10 @@ const spotReducer = (state = initialState, action) => {
 
     case ADD_SPOT: {
       newState = { ...state }
-      newState.list = { ...newState.list, [action.newSpot.id]: action.newSpot }
+      newState.list = { ...newState.list, [action.newSpot.spot.id]: action.newSpot.spot }
       return newState;
     }
+
     case LOAD_SPOT: {
       newState = { ...state }
       newState.list = { ...state.list,[action.spot.id]: action.spot }

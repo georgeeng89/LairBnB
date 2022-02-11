@@ -42,7 +42,7 @@ const validatePost = [
 
 // Get all Spots
 router.get('/', asyncHandler(async function (_req, res) {
-  const spot = await Spot.findAll();
+  const spot = await Spot.findAll({ include: { model: User } });
   return res.json(spot);
 }));
 
@@ -101,7 +101,7 @@ router.put('/:id', validatePost, asyncHandler(async (req, res) => {
     name,
     price,
     userId
-  },{ where: { id } })
+  }, { where: { id } })
 
   spot = await Spot.findByPk(id,
     { include: { model: User } })

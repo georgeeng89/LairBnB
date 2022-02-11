@@ -30,7 +30,7 @@ const SpotDetail = () => {
         <div className='spot-detail-outer'>
           <div className='spot-detail-container'>
 
-            {console.log('mySpot obj ------> ', currSpot)}
+            {console.log('currSpot ------> ', currSpot)}
             {console.log('my spots -------> ', spots)}
             {console.log('spotuser -------> ', currSpot.User)}
             {console.log('userid?? -------> ', user.id)}
@@ -39,7 +39,9 @@ const SpotDetail = () => {
             <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div>
             <div className='spot-detail-name'>name of spot: {currSpot.name}</div>
             <div className='spot-detail-address'>address {currSpot.address}</div>
+
             <div className='spot-detail-user'> posted by:   {currSpot?.User?.username}</div>
+
             <div className='spot-detail-price'>price of spot: {currSpot.price}</div>
 
 
