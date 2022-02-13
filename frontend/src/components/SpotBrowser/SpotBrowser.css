@@ -19,6 +19,7 @@ main {
   grid-gap: 10px;
   border: 2px solid blue;
   padding: 10px;
+  border-radius: 10px;
 }
 
 
@@ -30,12 +31,13 @@ main {
 }
 
 .lairs-welcome {
-  margin-top: 47px;
+  margin-top: 100px;
   height: 300px;
   width: 1000px;
   background-image: url("../../../public/images/stay.jpg");
   display: flex;
   justify-content: center;
+  border-radius: 20px;
 }
 
 .lairs-welcome h2 {

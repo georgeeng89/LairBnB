@@ -9,7 +9,7 @@ import { editSpot } from "../../store/spot";
 
 import "./EditSpotForm.css";
 
-const SpotForm = ({ user, spot }) => {
+const EditSpotForm = ({ user, spot }) => {
 
   console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
 
@@ -132,4 +132,4 @@ const SpotForm = ({ user, spot }) => {
   );
 };
 
-export default SpotForm;
+export default EditSpotForm;
