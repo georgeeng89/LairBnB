@@ -5,7 +5,7 @@
 }
 
 .explore-container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   padding: 30px;
   display: flex;
   justify-content: space-around;
@@ -42,7 +42,7 @@
   font-family: Helvetica;
   width: 350px;
   height: 350px;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -61,10 +61,48 @@
   font-family: Helvetica;
   width: 350px;
   height: 350px;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   padding: 30px;
   border-radius: 30px;
+}
+
+.homepage-container {
+  position: relative;
+  text-align: center;
+  z-index: -1;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.lower {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+
+.explore-item-text {
+  top: 15%;
+  left: 50%;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }

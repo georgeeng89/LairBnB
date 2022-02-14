@@ -11,7 +11,7 @@ import "./EditSpotForm.css";
 
 const EditSpotForm = ({ user, spot }) => {
 
-  console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
+  // console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id
@@ -28,14 +28,6 @@ const EditSpotForm = ({ user, spot }) => {
   const [errors, setErrors] = useState([]);
 
 
-  // const reset = () => {
-  //   setName("");
-  //   setAddress("");
-  //   setCity("");
-  //   setState("");
-  //   setCountry("");
-  //   setPrice("");
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,9 +44,8 @@ const EditSpotForm = ({ user, spot }) => {
     });
 
 
-    await setTimeout(() => { return }, 800);
-
     history.push(`/lairs`);
+
     // reset();
   };
 

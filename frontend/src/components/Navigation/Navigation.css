@@ -153,3 +153,23 @@
 .menu-container p {
   margin-right: 20px;
 }
+
+.list-lair-button{
+  margin: 5px;
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 9px 4px;
+  border: solid rgb(60, 151, 255) 1px;
+  border-radius: 3px;
+  background-color: rgb(60, 151, 255);
+}
+
+.list-lair-button:hover{
+  background-color: white;
+  color: rgb(60, 151, 255);
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
+  cursor: pointer;
+}

@@ -28,6 +28,8 @@ main {
   padding: 30px;
   border: 1px dotted red;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .lairs-welcome {
@@ -59,4 +61,10 @@ main {
 
 .nav-link {
   text-decoration: none;
+}
+
+
+.spots-image {
+  width: 100%;
+  height: 100%;
 }

@@ -16,7 +16,7 @@ module.exports = {
       state: 'California',
       country: 'United States',
       name: 'Cool Lair',
-      price: 120
+      price: 1120
 
     },
     {
@@ -26,7 +26,25 @@ module.exports = {
       state: 'California',
       country: 'United States',
       name: 'Chill Place',
-      price: 200
+      price: 220
+    },
+    {
+      userId: 3,
+      address: 'Somewhere in the Wild',
+      city: 'San Diego',
+      state: 'California',
+      country: 'United States',
+      name: 'Chill Place',
+      price: 300
+    },
+    {
+      userId: 4,
+      address: '24 Park Ave',
+      city: 'San Jose',
+      state: 'California',
+      country: 'United States',
+      name: 'Chill Place',
+      price: 425
     }
    ], {});
   },

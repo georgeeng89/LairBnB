@@ -4,7 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import EditSpot from '../EditSpot/EditSpot';
+import { destroySpot } from '../../store/spot';
+import { getSpotId } from '../../store/spot';
 
+import { getSpot } from '../../store/spot';
+
+import { getReviews } from '../../store/review';
+
+import Reviews from '../Reviews/Review';
+
+import AddReview from '../AddReview/AddReview';
 
 import './SpotDetails.css'
 
@@ -15,11 +24,24 @@ const SpotDetail = () => {
   const [showForm, setShowForm] = useState(false)
 
   const user = useSelector(state => state.session.user);
-
   const currSpot = useSelector((state) => state.spot.list[id]);
 
-  const spots = useSelector((state) => state.spot.list)
+  const spots = useSelector((state) => state.spot.list);
 
+  useEffect(() => {
+    dispatch(getSpotId(id))
+    // .then(data => { if (!data) history.push('/404') });
+    // dispatch(getSpot())
+    dispatch(getReviews())
+
+  }, [dispatch]);
+
+
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    await dispatch(destroySpot(currSpot.id))
+    return history.push('/lairs')
+  }
 
 
   return (
@@ -30,38 +52,53 @@ const SpotDetail = () => {
         <div className='spot-detail-outer'>
           <div className='spot-detail-container'>
 
-            {console.log('currSpot ------> ', currSpot)}
+            {/* {console.log('currSpot ------> ', currSpot)}
             {console.log('my spots -------> ', spots)}
             {console.log('spotuser -------> ', currSpot.User)}
             {console.log('userid?? -------> ', user?.id)}
-            {console.log('SPOT ID', currSpot.id)}
+            {console.log('SPOT ID', currSpot.id)} */}
 
-            <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div>
-            <div className='spot-detail-name'>name of spot: {currSpot.name}</div>
-            <div className='spot-detail-address'>address {currSpot.address}</div>
+            {/* <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div> */}
 
-            <div className='spot-detail-user'> posted by:   {currSpot?.User?.username}</div>
+            <div>
 
-            <div className='spot-detail-price'>price of spot: {currSpot.price}</div>
+              <div className='spot-detail-user'> Hosted By: {currSpot?.User?.username}</div>
+              <div className='spot-detail-name'>Name of Lair: {currSpot.name}</div>
+              <div className='spot-detail-address'>Address: {currSpot.address}</div>
+              <div className='spot-detail-price'>Cost Per Night: ${currSpot.price}</div>
 
+            </div>
+            <br></br>
+            <div>
+              {console.log('currSpot -----> ', currSpot)}
+              {user && currSpot?.userId !== user?.id && (
 
+                // <button>Add Review</button>
+                <AddReview spot={currSpot} user={user}/>
+
+              )}
+
+            </div>
             {user?.id === currSpot.userId && (
               <>
-                <EditSpot user={user} spot={currSpot}/>
+                <EditSpot user={user} spot={currSpot} />
 
-                {/* {showForm && (
-                  <EditSpot />
-                )} */}
-
-                <button>Delete</button>
+                <button id='delete-spot-button' onClick={handleDelete}>Delete</button>
+                <br></br>
               </>
             )}
 
 
           </div>
 
+          <div className='review-container'>
+            <h3>Reviews:</h3>
+            <Reviews id={currSpot?.id} />
+
+          </div>
 
         </div>
+
       )}
 
     </div>

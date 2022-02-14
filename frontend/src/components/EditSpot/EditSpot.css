@@ -1,0 +1,47 @@
+/* frontend/src/context/Modal.css */
+#modal-edit-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* #modal-content {
+  padding: 40px;
+  border-radius: 10px;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+
+#modal-content form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+#modal-content input {
+  margin: 10px;
+}

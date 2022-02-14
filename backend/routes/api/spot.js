@@ -112,4 +112,14 @@ router.put('/:id', validatePost, asyncHandler(async (req, res) => {
 
 }));
 
+router.delete('/:id', asyncHandler(async (req, res) => {
+
+  const { id } = req.body
+
+  const deletedSpot = await Spot.destroy({ where: { id: req.params.id } });
+
+  return res.json(deletedSpot)
+
+}))
+
 module.exports = router;

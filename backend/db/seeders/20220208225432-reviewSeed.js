@@ -10,10 +10,20 @@ module.exports = {
       */
    return queryInterface.bulkInsert('Reviews', [
      {
-     spotId: 1,
+     spotId: 2,
      userId: 1,
      review: 'This place was absolutely amazing. I would definitely come here again!'
-   }
+   },
+   {
+    spotId: 1,
+    userId: 2,
+    review: 'This place was fantastic. Love the soil.'
+  },
+  {
+    spotId: 4,
+    userId: 1,
+    review: 'This Lair was very dirty. Lots of litter everywhere.'
+  }
   ], {});
   },
 

@@ -49,7 +49,7 @@ function Navigation({ isLoaded }) {
 
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("demo@user.io");
-  const [password, setPassword] = useState("password");
+  const [password, setPassword] = useState("strongpass");
   const [errors, setErrors] = useState([]);
 
   const demoLogin = (e) => {
@@ -78,6 +78,7 @@ function Navigation({ isLoaded }) {
           <input type='hidden' value={credential} />
           <input type='hidden' value={password} />
           <button className='get-started'>Demo</button>
+
         </form>
 
 
@@ -92,6 +93,7 @@ function Navigation({ isLoaded }) {
       <li className='logo-container'>
         <NavLink exact to="/"><img className='logo' src='../../../images/lairbnb_logo.png' /></NavLink>
       </li>
+
       <li className='upper__right'>
         {isLoaded && sessionLinks}
       </li>
