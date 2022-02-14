@@ -1,8 +1,35 @@
 .spot-details-page {
   margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
 .spot-details-container {
   border: 3px solid red;
+}
+
+
+.lair-image {
+  width: 600px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+.spot-detail-outer {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container-outer {
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 10px;
 }

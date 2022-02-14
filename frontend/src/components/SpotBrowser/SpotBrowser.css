@@ -17,19 +17,24 @@ main {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   padding: 10px;
   border-radius: 10px;
 }
 
 
 .spots-container {
-  width: 150px;
+  width: 180px;
   padding: 30px;
-  border: 1px dotted red;
+  border: 1px solid black;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.spots-container:hover {
+  box-shadow: 0 0 10px 0.1em rgb(1, 2, 2);
 }
 
 .lairs-welcome {

@@ -54,7 +54,6 @@ const EditReviewForm = ({ user, review, id, spotId }) => {
 
         <input type="hidden" name="spotId" value={spotId} />
 
-        Name
         <textarea
           type="text"
           onChange={(e) => setReview(e.target.value)}

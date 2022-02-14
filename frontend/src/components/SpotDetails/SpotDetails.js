@@ -45,62 +45,73 @@ const SpotDetail = () => {
 
 
   return (
-    <div className='spot-details-page'>
-      <h2>Lair Details</h2>
+    <div className='container-outer'>
 
-      {currSpot && (
-        <div className='spot-detail-outer'>
-          <div className='spot-detail-container'>
 
-            {/* {console.log('currSpot ------> ', currSpot)}
+      <div className='spot-details-page'>
+
+        <div>
+          <img className='lair-image' src="http://pm1.narvii.com/6611/1d286aa9237b8ee8891c0026b3021e031049433e_00.jpg" />
+        </div>
+
+        <div>
+          <h2>Lair Details</h2>
+        </div>
+
+        {currSpot && (
+          <div className='spot-detail-outer'>
+            <div className='spot-detail-container'>
+
+              {/* {console.log('currSpot ------> ', currSpot)}
             {console.log('my spots -------> ', spots)}
             {console.log('spotuser -------> ', currSpot.User)}
             {console.log('userid?? -------> ', user?.id)}
             {console.log('SPOT ID', currSpot.id)} */}
 
-            {/* <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div> */}
+              {/* <div className='spot-detail-userId'> userId of post   {currSpot.userId}</div> */}
 
-            <div>
+              <div>
 
-              <div className='spot-detail-user'> Hosted By: {currSpot?.User?.username}</div>
-              <div className='spot-detail-name'>Name of Lair: {currSpot.name}</div>
-              <div className='spot-detail-address'>Address: {currSpot.address}</div>
-              <div className='spot-detail-price'>Cost Per Night: ${currSpot.price}</div>
+                <div className='spot-detail-user'> Hosted By: {currSpot?.User?.username}</div>
+                <div className='spot-detail-name'>Name of Lair: {currSpot.name}</div>
+                <div className='spot-detail-address'>Address: {currSpot.address}</div>
+                <div className='spot-detail-price'>Cost Per Night: ${currSpot.price}</div>
 
-            </div>
-            <br></br>
-            <div>
-              {console.log('currSpot -----> ', currSpot)}
-              {user && currSpot?.userId !== user?.id && (
+              </div>
+              <br></br>
+              <div>
+                {console.log('currSpot -----> ', currSpot)}
+                {user && currSpot?.userId !== user?.id && (
 
-                // <button>Add Review</button>
-                <AddReview spot={currSpot} user={user}/>
+                  // <button>Add Review</button>
+                  <AddReview spot={currSpot} user={user} />
 
+                )}
+
+              </div>
+              {user?.id === currSpot.userId && (
+                <>
+                  <EditSpot user={user} spot={currSpot} />
+
+                  <button id='delete-spot-button' onClick={handleDelete}>Delete</button>
+                  <br></br>
+                </>
               )}
 
+
             </div>
-            {user?.id === currSpot.userId && (
-              <>
-                <EditSpot user={user} spot={currSpot} />
 
-                <button id='delete-spot-button' onClick={handleDelete}>Delete</button>
-                <br></br>
-              </>
-            )}
+            <div className='review-container'>
+              <h3>Reviews:</h3>
+              <Reviews id={currSpot?.id} />
 
+            </div>
 
           </div>
 
-          <div className='review-container'>
-            <h3>Reviews:</h3>
-            <Reviews id={currSpot?.id} />
+        )}
 
-          </div>
-
-        </div>
-
-      )}
-
+      </div>
     </div>
   )
 }

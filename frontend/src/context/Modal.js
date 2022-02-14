@@ -45,7 +45,7 @@ export function ModalEditForm({ onClose, children }) {
   return ReactDOM.createPortal(
     <div id="modal-edit-form">
       <div id="modal-background" onClick={onClose} />
-      <div id="modal-content" >
+      <div id="modal-content2" >
         {children}
       </div>
     </div>,
