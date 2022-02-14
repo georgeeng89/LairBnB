@@ -74,7 +74,7 @@ const SpotDetail = () => {
 
                 <div className='spot-detail-user'> Hosted By: {currSpot?.User?.username}</div>
                 <div className='spot-detail-name'>Name of Lair: {currSpot.name}</div>
-                <div className='spot-detail-address'>Address: {currSpot.address}</div>
+                <div className='spot-detail-address'>Address: {currSpot.address}, {currSpot.city}, {currSpot.state} {currSpot.country}</div>
                 <div className='spot-detail-price'>Cost Per Night: ${currSpot.price}</div>
 
               </div>
