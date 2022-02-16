@@ -29,9 +29,16 @@ const SpotDetail = () => {
   const spots = useSelector((state) => state.spot.list);
 
   useEffect(() => {
+
     dispatch(getSpotId(id))
-    // .then(data => { if (!data) history.push('/404') });
+      .then(data => {
+        if (!data) {
+          history.push('/PageNotFound')
+        }
+      });
+
     // dispatch(getSpot())
+
     dispatch(getReviews())
 
   }, [dispatch]);
