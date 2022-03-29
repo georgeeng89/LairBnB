@@ -59,6 +59,10 @@ router.post(
       {
         include: { model: User }
       })
+
+      const user = await User.findByPk(userId)
+      spot.dataValues.User = user;
+
     return res.json({
       spot
     });

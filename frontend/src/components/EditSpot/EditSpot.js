@@ -24,7 +24,7 @@ function EditSpot({user, spot}) {
             <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
           </div>
 
-          <EditSpotForm user={user} spot={spot}/>
+          <EditSpotForm user={user} spot={spot} showModal={setShowModal}/>
         </ModalEditForm>
       )}
     </>

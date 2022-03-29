@@ -33,7 +33,7 @@
 // }
 
 // export default Navigation;
-
+// console.log('hi)
 
 // frontend/src/components/Navigation/index.js
 import React, { useState } from "react";

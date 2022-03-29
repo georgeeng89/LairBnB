@@ -9,7 +9,7 @@ import { editSpot } from "../../store/spot";
 
 import "./EditSpotForm.css";
 
-const EditSpotForm = ({ user, spot }) => {
+const EditSpotForm = ({ user, spot, showModal }) => {
 
   // console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
 
@@ -43,8 +43,9 @@ const EditSpotForm = ({ user, spot }) => {
       if (data && data.errors) setErrors(data.errors);
     });
 
+    showModal(false)
 
-    history.push(`/lairs`);
+    // history.push(`/lairs`);
 
     // reset();
   };

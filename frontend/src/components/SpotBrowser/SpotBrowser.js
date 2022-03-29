@@ -51,10 +51,12 @@ const SpotBrowser = () => {
 
                     <div className='spots-inner-container'>
                       <div className='spots-info spot-image' > </div>
-                      {/* <div className='spots-info' >{`Hosted by: ${spot?.User?.username}`}</div> */}
+
+                      <div className='spots-info' >{`Hosted by: ${spot?.User?.username}`}</div>
                       <div className="spots-info"> {'Name: '}{spot?.name}</div>
                       <div className="spots-info">{spot?.address && `Address: ${spot?.address}`}</div>
                       <div className="spots-info">{spot?.price && `Price: $${spot?.price}`}</div>
+                      
                     </div>
 
                   </NavLink>

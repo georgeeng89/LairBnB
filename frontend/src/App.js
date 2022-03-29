@@ -10,6 +10,8 @@ import SpotDetail from "./components/SpotDetails/SpotDetails";
 
 import SpotBrowser from "./components/SpotBrowser/SpotBrowser";
 import SpotForm from "./components/SpotForm/SpotForm";
+import { getSpot } from "./store/spot";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(getSpot())
   }, [dispatch]);
 
   return (
