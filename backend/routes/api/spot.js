@@ -56,12 +56,11 @@ router.post(
     const { address, city, state, country, name, price, userId } = req.body;
     const spot = await Spot.create(
       { address, city, state, country, name, price, userId },
-      {
-        include: { model: User }
-      })
+      { include: { model: User } }
+    )
 
-      const user = await User.findByPk(userId)
-      spot.dataValues.User = user;
+    const user = await User.findByPk(userId)
+    spot.dataValues.User = user;
 
     return res.json({
       spot

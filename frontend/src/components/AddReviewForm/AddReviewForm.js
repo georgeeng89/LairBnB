@@ -5,7 +5,7 @@ import { postReview } from "../../store/review";
 
 import "./AddReviewForm.css";
 
-const AddReviewForm = ({ user, spot }) => {
+const AddReviewForm = ({ user, spot, setModal}) => {
 
   console.log('MY ADD REVIEW FORM SPOT----> ', spot)
   console.log('MY ADD REVIEW FORM USER----> ', user)
@@ -41,7 +41,8 @@ const AddReviewForm = ({ user, spot }) => {
     //     if (data && data.errors) setErrors(data.errors);
     //   });
 
-    history.push(`/lairs/`);
+    // history.push(`/lairs/`);
+    setModal(false)
 
     //   // reset();
   };

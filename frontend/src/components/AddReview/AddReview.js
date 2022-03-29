@@ -19,7 +19,7 @@ function AddReview({user, spot}) {
     <>
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
 
-      <span className='sign-in' onClick={() => setShowModal(true)}> Add Review </span>
+      <span className='sign-in add-edit-button' onClick={() => setShowModal(true)}> Add Review </span>
 
 
       {showModal && (
@@ -29,7 +29,7 @@ function AddReview({user, spot}) {
             <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
           </div>
 
-          <AddReviewForm user={user} spot={spot}/>
+          <AddReviewForm user={user} spot={spot} setModal={setShowModal}/>
 
         </ModalEditForm>
       )}

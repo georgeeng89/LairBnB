@@ -12,7 +12,7 @@ import EditReview from '../EditReview/EditReview';
 
 
 
-const Reviews = () => {
+const Reviews = ({setReview}) => {
   const { id } = useParams()
   const parseId = parseInt(id, 10)
 
@@ -33,6 +33,12 @@ const Reviews = () => {
 
   const reviewSpots = reviewArr?.filter((review) => review.spotId === parseId)
 
+  if(reviewSpots.length < 1) {
+    setReview(false)
+  } else if (reviewSpots.length > 0) {
+    setReview(true)
+  }
+
   const handleDelete = async (e) => {
 
     await dispatch(destroyReview(e.target.id))
@@ -52,7 +58,7 @@ const Reviews = () => {
 
             {(userId === user?.id) && (
 
-              <div>
+              <div className='add-review-container'>
 
                 <EditReview user={User} review={review} id={id} spotId={spotId} />
 

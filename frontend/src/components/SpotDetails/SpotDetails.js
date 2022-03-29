@@ -21,6 +21,8 @@ const SpotDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const [showReviews, setShowReviews] = useState(false)
   const [showForm, setShowForm] = useState(false)
 
   const user = useSelector(state => state.session.user);
@@ -86,7 +88,7 @@ const SpotDetail = () => {
 
               </div>
               <br></br>
-              <div>
+              <div className='add-review-container'>
                 {console.log('currSpot -----> ', currSpot)}
                 {user && currSpot?.userId !== user?.id && (
 
@@ -95,23 +97,25 @@ const SpotDetail = () => {
 
                 )}
 
-              </div>
+              </div >
               {user?.id === currSpot.userId && (
-                <>
+                <div>
                   <EditSpot user={user} spot={currSpot} />
-
+                  {/* PLACEHOLDER */}
                   <button id='delete-spot-button' onClick={handleDelete}>Delete</button>
                   <br></br>
-                </>
+                </div>
               )}
 
 
             </div>
 
             <div className='review-container'>
-              <h3>Reviews:</h3>
-              <Reviews id={currSpot?.id} />
 
+              {showReviews && <h3>Reviews:</h3>}
+              {!showReviews && <h3>No Reviews</h3>}
+
+              <Reviews setReview={setShowReviews} id={currSpot?.id} />
             </div>
 
           </div>
