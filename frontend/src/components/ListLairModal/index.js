@@ -3,20 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams, } from 'react-router-dom'
 import { Modal, ModalEditForm } from '../../context/Modal';
 
-// import EditSpotForm from '../EditSpotForm/EditSpotForm';
-
-import EditReviewForm from '../EditReviewForm/EditReviewForm';
-
-import './EditReview.css'
+import SpotForm from '../SpotForm/SpotForm';
 
 
-function EditReview({user, review, id, spotId}) {
+function ListLairModal({user, spot}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
-      <span className='sign-in' onClick={() => setShowModal(true)}>Edit Review</span>
+      <span className='sign-in' onClick={() => setShowModal(true)}>List a Lair</span>
 
 
       {showModal && (
@@ -26,12 +22,11 @@ function EditReview({user, review, id, spotId}) {
             <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
           </div>
 
-          <EditReviewForm setModal={setShowModal} user={user} review={review} id={id} spotId={spotId}/>
-
+          <SpotForm user={user} spot={spot} showModal={setShowModal}/>
         </ModalEditForm>
       )}
     </>
   );
 }
 
-export default EditReview;
+export default ListLairModal;

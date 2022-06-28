@@ -12,7 +12,7 @@ import EditReview from '../EditReview/EditReview';
 
 
 
-const Reviews = ({setReview}) => {
+const Reviews = ({ setReview }) => {
   const { id } = useParams()
   const parseId = parseInt(id, 10)
 
@@ -33,7 +33,7 @@ const Reviews = ({setReview}) => {
 
   const reviewSpots = reviewArr?.filter((review) => review.spotId === parseId)
 
-  if(reviewSpots.length < 1) {
+  if (reviewSpots.length < 1) {
     setReview(false)
   } else if (reviewSpots.length > 0) {
     setReview(true)
@@ -67,12 +67,12 @@ const Reviews = ({setReview}) => {
               </div>
             )}
 
-            <div >
+            {/* <div >
               <div>
 
 
               </div>
-            </div>
+            </div> */}
 
 
           </div>

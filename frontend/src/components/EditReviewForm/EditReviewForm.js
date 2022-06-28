@@ -10,7 +10,7 @@ import { editReview } from "../../store/review";
 
 import "./EditReviewForm.css";
 
-const EditReviewForm = ({ user, review, id, spotId }) => {
+const EditReviewForm = ({ user, review, id, spotId, setModal }) => {
 
   // console.log('MY SPOT FROM EDIT SPOT ----> ', spot)
 
@@ -36,7 +36,9 @@ const EditReviewForm = ({ user, review, id, spotId }) => {
 
     dispatch(editReview(updatedReview))
 
-    history.push(`/lairs`);
+    // history.push(`/lairs`);
+
+    setModal(false)
 
     // reset();
   };

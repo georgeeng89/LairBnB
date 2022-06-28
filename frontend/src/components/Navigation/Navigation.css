@@ -173,3 +173,9 @@
   box-shadow: 1px 1px .2em rgb(170, 170, 170);
   cursor: pointer;
 }
+
+
+.user-welcome {
+  margin-top: 15px;
+  margin-right: 10px;
+}

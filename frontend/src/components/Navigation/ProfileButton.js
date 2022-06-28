@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useHistory } from "react-router-dom";
+import ListLairModal from "../ListLairModal";
 
 import './Navigation.css';
 
@@ -39,8 +40,11 @@ function ProfileButton({ user }) {
     <>
   <div className="menu-container">
 
-      <p>Welcome, {user.username}!</p>
+      <div className="user-welcome">Welcome, {user.username}!</div>
+
       <a className="list-lair-button" href="/new">List a Lair</a>
+      <ListLairModal />
+
       <a className="menu-button" onClick={openMenu}>
         <img className='menu' src='../../../images/menu-bars.png' />
       </a>
