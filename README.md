@@ -9,7 +9,7 @@
 
 ### 3. Create the User
 - In PostgreSQL, create a user: ```CREATE USER <username> WITH PASSWORD <password> CREATEDB LOGIN;```
-- Make sure <password> is in quotes.
+- Make sure username and password are in quotes.
 
 ### 4. Setting up the environment.
 - In the backend folder, create a ```.env``` file. 
