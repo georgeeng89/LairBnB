@@ -43,6 +43,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DECIMAL
       },
+      description: {
+        allowNull: false,
+        type: Sequelize.STRING(9000)
+      },
+      url: {
+        allowNull: false,
+        type: Sequelize.STRING(500)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

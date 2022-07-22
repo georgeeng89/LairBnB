@@ -62,7 +62,7 @@ const Reviews = ({ setReview }) => {
 
                 <EditReview user={User} review={review} id={id} spotId={spotId} />
 
-                <button onClick={handleDelete} id={id}>Delete Review</button>
+                <button className='delete-review-button' onClick={handleDelete} id={id}>Delete Review</button>
 
               </div>
             )}

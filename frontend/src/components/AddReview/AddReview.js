@@ -11,7 +11,7 @@ import './AddReview.css'
 
 
 
-function AddReview({user, spot}) {
+function AddReview({ user, spot }) {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -19,17 +19,17 @@ function AddReview({user, spot}) {
     <>
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
 
-      <span className='sign-in add-edit-button' onClick={() => setShowModal(true)}> Add Review </span>
+      <span className='sign-in add-edit-button' onClick={() => setShowModal(true)}> <i class="fa-solid fa-circle-plus"></i> Review </span>
 
 
       {showModal && (
         <ModalEditForm onClose={() => setShowModal(false)}>
 
           <div className='close-modal-container'>
-            <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
+            <span className='close-modal' onClick={() => setShowModal(false)}><i class="fa-solid fa-xmark"></i></span>
           </div>
 
-          <AddReviewForm user={user} spot={spot} setModal={setShowModal}/>
+          <AddReviewForm user={user} spot={spot} setModal={setShowModal} />
 
         </ModalEditForm>
       )}

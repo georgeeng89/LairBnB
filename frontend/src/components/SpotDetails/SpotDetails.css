@@ -1,25 +1,54 @@
+h2 {
+  margin-top: 10px;
+}
+
+
 .spot-details-page {
-  margin-top: 100px;
+  padding: 50px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  /* border: 2px solid blue; */
 }
 
 
-.spot-details-container {
+/* .spot-details-container {
   border: 3px solid red;
-}
+} */
 
 
 .lair-image {
-  width: 600px;
+  width: 800px;
   height: 100%;
   border-radius: 10px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.lair-image-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.spot-detail-name {
+  color: navy;
+  font-weight: bold;
+}
+
+.spot-detail-address {
+  font-size: 16px;
+  color: rgb(93, 93, 93);
 }
 
 
+
+
 .spot-detail-outer {
-  border: 2px solid black;
+  width: 900px;
+  /* border: 2px solid black; */
   padding: 10px;
   border-radius: 5px;
 }
@@ -30,6 +59,150 @@
   justify-content: center;
 }
 
-h2 {
-  margin-top: 10px;
+.name-price {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.booking-container {
+  padding: 30px;
+  display: flex;
+  /* border: 1px solid red; */
+  border: 1px solid rgb(205, 204, 204);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  width: fit-content;
+}
+
+.edit-delete-lair {
+  /* border: 1px solid orange; */
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.spot-details-all {
+  /* border: 2px solid green; */
+  width: 600px;
+}
+
+.lair-details-container {
+  /* border: 2px solid orange; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hosted-by {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  width: 550px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+
+.description-about {
+  width: 550px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.reserve-button {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid rgb(250, 47, 98) 1px;
+  border-radius: 3px;
+  background-color: rgb(250, 47, 98)
+}
+
+.reserve-button:hover {
+  background-color: white;
+  color: rgb(250, 47, 98);
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
+  cursor: pointer;
+}
+
+.add-review-container {
+  border-bottom: 1px solid rgb(190, 190, 190);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.booking-form-inner {
+  width: 150px;
+}
+
+.book-me {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.calendar-date {
+  /* border: 2px solid green; */
+  margin: 5px;
+  padding: 5px;
+}
+
+.check-in-text {
+  font-size: 12px;
+}
+
+.total-cost {
+  padding: 5px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+}
+
+.price-per-night {
+  padding: 5px;
+  border-bottom: 1px solid rgb(149, 149, 149);
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+#total {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+
+
+#delete-spot-button {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid rgb(229, 0, 0);
+  border-radius: 3px;
+  background-color: rgb(229, 0, 0);
+}
+
+#delete-spot-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color:rgb(229, 0, 0)
 }

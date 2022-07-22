@@ -14,14 +14,13 @@ function EditSpot({user, spot}) {
   return (
     <>
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
-      <span className='sign-in' onClick={() => setShowModal(true)}>Edit</span>
-
+      <span className='sign-in' onClick={() => setShowModal(true)}>Edit Lair</span>
 
       {showModal && (
         <ModalEditForm onClose={() => setShowModal(false)}>
 
           <div className='close-modal-container'>
-            <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
+            <span className='close-modal' onClick={() => setShowModal(false)}><i class="fa-solid fa-xmark"></i></span>
           </div>
 
           <EditSpotForm user={user} spot={spot} showModal={setShowModal}/>

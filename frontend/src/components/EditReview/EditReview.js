@@ -23,7 +23,7 @@ function EditReview({user, review, id, spotId}) {
         <ModalEditForm onClose={() => setShowModal(false)}>
 
           <div className='close-modal-container'>
-            <span className='close-modal' onClick={() => setShowModal(false)}>X</span>
+            <span className='close-modal' onClick={() => setShowModal(false)}><i class="fa-solid fa-xmark"></i></span>
           </div>
 
           <EditReviewForm setModal={setShowModal} user={user} review={review} id={id} spotId={spotId}/>

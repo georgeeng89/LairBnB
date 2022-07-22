@@ -16,6 +16,10 @@ const SpotBrowser = () => {
 
   const [showForm, setShowForm] = useState(false);
 
+  const handleImage = (e) => {
+    e.target.src = '/static/human-lair.jpg'
+  }
+
   useEffect(() => {
 
     dispatch(getSpot());
@@ -40,27 +44,29 @@ const SpotBrowser = () => {
           </div>
 
           <div className='spots-container-outer' >
+
             {spotValue?.map((spot) => {
               return (
-                <div className='spots-container'>
+                <NavLink className='nav-link' key={spot?.name} to={`/lair/${spot?.id}`}>
+                  <div className='spots-container'>
 
-                  <div>
-                  <img className='spots-image' src="http://pm1.narvii.com/6611/1d286aa9237b8ee8891c0026b3021e031049433e_00.jpg"/>
-                  </div>
-                  <NavLink className='nav-link' key={spot?.name} to={`/lair/${spot?.id}`}>
+                      <div className="spots-info"> {spot?.name}</div>
+                    <div>
+                      <img className='spots-image' src={spot?.url} onError={handleImage}/>
+                    </div>
+                    {/* <NavLink className='nav-link' key={spot?.name} to={`/lair/${spot?.id}`}> */}
 
                     <div className='spots-inner-container'>
                       <div className='spots-info spot-image' > </div>
 
-                      <div className='spots-info' >{`Hosted by: ${spot?.User?.username}`}</div>
-                      <div className="spots-info"> {'Name: '}{spot?.name}</div>
-                      <div className="spots-info">{spot?.address && `Address: ${spot?.address}`}</div>
-                      <div className="spots-info">{spot?.price && `Price: $${spot?.price}`}</div>
-                      
+                      <div className="spots-info">{spot?.address && `${spot?.address}`}</div>
+                      <div className="spots-info">{spot?.price && `$${spot?.price} /night`}</div>
+                      {/* <div className='spots-info' >{`Hosted by: ${spot?.User?.username}`}</div> */}
+
                     </div>
 
-                  </NavLink>
-                </div>
+                  </div>
+                </NavLink>
               );
             })}
           </div>

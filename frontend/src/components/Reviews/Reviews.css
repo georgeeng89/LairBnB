@@ -1,0 +1,17 @@
+.delete-review-button {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid rgb(229, 0, 0);
+  border-radius: 3px;
+  background-color: rgb(229, 0, 0);
+}
+
+.delete-review-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color:rgb(229, 0, 0)
+}

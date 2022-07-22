@@ -25,6 +25,9 @@ const EditSpotForm = ({ user, spot, showModal }) => {
   const [state, setState] = useState(spot.state);
   const [country, setCountry] = useState(spot.country);
   const [price, setPrice] = useState(spot.price);
+  const [description, setDescription] = useState(spot.description);
+  const [url, setUrl] = useState(spot.url);
+
   const [errors, setErrors] = useState([]);
 
 
@@ -32,7 +35,7 @@ const EditSpotForm = ({ user, spot, showModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newSpot = {
-      id: spot.id, name, address, city, state, country, price, userId
+      id: spot.id, name, address, city, state, country, price, userId, description, url
     };
 
     setErrors([]);
@@ -51,75 +54,123 @@ const EditSpotForm = ({ user, spot, showModal }) => {
   };
 
   return (
-    <div className="edit-spot-container">
-      <h1>Edit Lair</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="spot-form-container">
 
-        <ul className="errors-list">
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
+      <div className="input-box">
 
-        <input type="hidden" name="userId" value={userId} />
+        <h1>Edit Lair</h1>
+        <form onSubmit={handleSubmit}>
+
+          <ul className="errors-list">
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
+
+          <input type="hidden" name="userId" value={userId} />
+
+          <span className="edit-text">
+
+            Name
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            placeholder="Name"
+            name="name"
+            required
+          />
+          <span className="edit-text">
+
+            Address
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setAddress(e.target.value)}
+            value={address}
+            placeholder="Address"
+            name="address"
+            required
+          />
+          <span className="edit-text">
+
+            City
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setCity(e.target.value)}
+            value={city}
+            placeholder="City"
+            name="city"
+            required
+          />
+          <span className="edit-text">
+
+            State
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setState(e.target.value)}
+            value={state}
+            placeholder="State"
+            name="state"
+            required
+          />
+          <span className="edit-text">
+
+            Country
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setCountry(e.target.value)}
+            value={country}
+            placeholder="Country"
+            name="country"
+            required
+          />
+          <span className="edit-text">
+
+            Price
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+            placeholder="Price"
+            name="price"
+            required
+          />
+          <span className="edit-text">
+
+            Description
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+            placeholder="Description"
+            name="decription"
+            required
+          />
+          <span className="edit-text">
+
+            Image URL
+          </span>
+          <input
+            type="text"
+            onChange={(e) => setUrl(e.target.value)}
+            value={url}
+            placeholder="Url"
+            name="url"
+            required
+          />
 
 
-        Name
-        <input
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          placeholder="Name"
-          name="name"
-          required
-        />
-        Address
-        <input
-          type="text"
-          onChange={(e) => setAddress(e.target.value)}
-          value={address}
-          placeholder="Address"
-          name="address"
-          required
-        />
-        City
-        <input
-          type="text"
-          onChange={(e) => setCity(e.target.value)}
-          value={city}
-          placeholder="City"
-          name="city"
-          required
-        />
-        State
-        <input
-          type="text"
-          onChange={(e) => setState(e.target.value)}
-          value={state}
-          placeholder="State"
-          name="state"
-          required
-        />
-        Country
-        <input
-          type="text"
-          onChange={(e) => setCountry(e.target.value)}
-          value={country}
-          placeholder="Country"
-          name="country"
-          required
-        />
-        Price
-        <input
-          type="text"
-          onChange={(e) => setPrice(e.target.value)}
-          value={price}
-          placeholder="Price"
-          name="price"
-          required
-        />
+          <button type="submit">Submit</button>
+        </form>
+
+      </div>
 
 
-        <button type="submit">Submit</button>
-      </form>
     </div>
   );
 };

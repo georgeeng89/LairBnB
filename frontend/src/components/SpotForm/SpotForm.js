@@ -9,7 +9,10 @@ import { createSpot } from "../../store/spot";
 
 import "./SpotForm.css";
 
-const SpotForm = () => {
+const SpotForm = ({user, spot, showModal}) => {
+
+  // console.log('WTF IS THISSSSSSSS HELLOOOO ===>', showModal)
+  // console.log('WTF IS THISSSSSSSS zZZZZZZZZZ ===>', whatami)
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id
@@ -23,14 +26,17 @@ const SpotForm = () => {
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
   const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newSpot = {
-      name, address, city, state, country, price, userId
+      name, address, city, state, country, price, userId, description, url
     };
+
 
     setErrors([]);
 
@@ -41,7 +47,10 @@ const SpotForm = () => {
       if (data && data.errors) setErrors(data.errors);
     });
 
+    showModal(false)
+
     // dispatch(createSpot(newSpot))
+
 
     history.push(`/lairs`);
     // reset();
@@ -108,13 +117,38 @@ const SpotForm = () => {
             />
 
             <input
-              type="text"
+              type="number"
               onChange={(e) => setPrice(e.target.value)}
               value={price}
               placeholder="Price"
               name="price"
               required
             />
+
+
+            <input
+              type="text"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+              placeholder="Add a description..."
+              name="description"
+              required
+            />
+
+
+            <input
+              type="text"
+              onChange={(e) => setUrl(e.target.value)}
+              value={url}
+              placeholder="Image URL"
+              name="url"
+              required
+            />
+
+
+
+
+
           </div>
 
 

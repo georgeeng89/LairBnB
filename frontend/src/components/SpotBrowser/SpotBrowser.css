@@ -15,18 +15,20 @@ main {
 
 .spots-container-outer {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
   /* border: 2px solid blue; */
   padding: 10px;
   border-radius: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 
 .spots-container {
-  width: 180px;
+  width: 250px;
   padding: 30px;
-  border: 1px solid black;
+  border: 1px solid rgb(203, 203, 203);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -34,7 +36,7 @@ main {
 }
 
 .spots-container:hover {
-  box-shadow: 0 0 10px 0.1em rgb(1, 2, 2);
+  box-shadow: 0 0 20px 0 rgb(0, 0, 0, 0.5);
 }
 
 .lairs-welcome {
@@ -61,7 +63,7 @@ main {
   font-size: 14px;
   margin: 1px;
   color: black;
-  font-family: Helvetica
+  font-weight: bold;
 }
 
 .nav-link {
@@ -71,5 +73,6 @@ main {
 
 .spots-image {
   width: 100%;
-  height: 100%;
+  height: 200px;
+  object-fit: cover;
 }

@@ -53,9 +53,9 @@ router.post(
   '/',
   validatePost,
   asyncHandler(async (req, res) => {
-    const { address, city, state, country, name, price, userId } = req.body;
+    const { address, city, state, country, name, price, userId, description, url } = req.body;
     const spot = await Spot.create(
-      { address, city, state, country, name, price, userId },
+      { address, city, state, country, name, price, userId, description, url },
       { include: { model: User } }
     )
 
@@ -93,7 +93,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.put('/:id', validatePost, asyncHandler(async (req, res) => {
 
-  const { address, city, state, country, name, price, userId, id } = req.body;
+  const { address, city, state, country, name, price, userId, id, description, url } = req.body;
 
 
   let spot = await Spot.update({
@@ -103,7 +103,9 @@ router.put('/:id', validatePost, asyncHandler(async (req, res) => {
     country,
     name,
     price,
-    userId
+    userId,
+    description,
+    url
   }, { where: { id } })
 
   spot = await Spot.findByPk(id,

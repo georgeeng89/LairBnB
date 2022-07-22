@@ -61,12 +61,11 @@ const AddReviewForm = ({ user, spot, setModal}) => {
 
         <input type="hidden" name="spotId" value={spot.id} />
 
-        Enter Your Review:
         <textarea
           type="text"
           onChange={(e) => setReview(e.target.value)}
           value={review}
-          placeholder="Review"
+          placeholder="Describe your experience..."
           name="review"
           className="review-text"
           required

@@ -42,18 +42,20 @@ function ProfileButton({ user }) {
 
       <div className="user-welcome">Welcome, {user.username}!</div>
 
-      <a className="list-lair-button" href="/new">List a Lair</a>
+      {/* <a className="list-lair-button" href="/new">List a Lair</a> */}
+
       <ListLairModal />
 
-      <a className="menu-button" onClick={openMenu}>
+      <div className="menu-button" onClick={openMenu}>
         <img className='menu' src='../../../images/menu-bars.png' />
-      </a>
+      </div>
 
       <div className="menu-options">
         {showMenu && (
           <ul className="profile-dropdown">
             <li> <div className="menu-items">Username: </div>{user.username}</li>
             <li> <div className="menu-items">Email: </div>{user.email}</li>
+            <li> <a className="menu-items" href={`/bookings`}>My Bookings</a></li>
             <li>
               <button onClick={logout}>Log Out</button>
             </li>

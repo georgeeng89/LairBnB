@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     lat: DataTypes.DECIMAL,
     lng: DataTypes.DECIMAL,
     name: DataTypes.STRING,
-    price: DataTypes.DECIMAL
+    price: DataTypes.DECIMAL,
+    description: DataTypes.STRING,
+    url: DataTypes.STRING,
   }, {});
   Spot.associate = function (models) {
     Spot.belongsTo(models.User, { foreignKey: 'userId' })
