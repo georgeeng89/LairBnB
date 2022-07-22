@@ -114,7 +114,7 @@ const SpotDetail = () => {
 
       dispatch(createOneBooking(newBooking));
 
-      alert("Reservation Successful!")
+      // alert("Reservation Successful!")
 
       return history.push('/bookings')
     }

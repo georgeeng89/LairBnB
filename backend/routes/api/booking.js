@@ -38,9 +38,9 @@ router.post(
 
     const booking = await Booking.create(req.body);
 
-    // const spot = await Spot.findByPk(spotId)
+    const spot = await Spot.findByPk(spotId)
 
-    // booking.dataValues.Spot = spot
+    booking.dataValues.Spot = spot
 
     return res.json(booking);
 
