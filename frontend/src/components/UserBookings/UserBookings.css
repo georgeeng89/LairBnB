@@ -1,0 +1,101 @@
+.user-bookings-container {
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  /* border: 2px solid blue; */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+
+}
+
+
+.spot-container {
+  border: 1px solid rgb(196, 196, 196);
+  padding: 10px;
+  border-radius: 10px;
+  width: 400px;
+  font-weight: bold;
+}
+
+.bookings-header {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: navy;
+}
+
+.booking-image img {
+  /* width: 350px; */
+  width: 100%;
+  /* border: 3px solid orange; */
+}
+
+
+
+.booking-details {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid pink; */
+}
+
+.cancel-booking {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid rgb(255, 62, 110) 1px;
+  border-radius: 3px;
+  background-color: rgb(255, 62, 110);
+}
+
+
+.no-reservations {
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.no-reservations-container {
+  display: flex;
+  justify-content: center;
+}
+
+.no-reservations-text {
+  font-size: 28px;
+}
+
+.cancel-booking:hover{
+  background-color: white;
+  color: rgb(255, 62, 110);
+  cursor: pointer;
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
+}
+
+
+@media screen and (max-width: 1500px){
+
+  .spot-container {
+    /* border: 1px solid green; */
+    width: 280px;
+  }
+
+  .user-bookings-container {
+    width: 900px;
+  }
+
+  .spot-container {
+    font-size: 12px;
+  }
+
+}
