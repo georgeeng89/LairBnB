@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/georgeeng89/React-Express-Auth/issues"
   },
-  "homepage": "https://github.com/georgeeng89/React-Express-Auth#readme"
+  "homepage": "https://github.com/georgeeng89/React-Express-Auth#readme",
+  "dependencies": {
+    "sequelize": "^6.21.3"
+  }
 }
